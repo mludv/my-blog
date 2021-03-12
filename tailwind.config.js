@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
   purge: ['./components/**/*.js', './pages/**/*.js'],
   theme: {
@@ -17,6 +19,9 @@ module.exports = {
       },
       lineHeight: {
         tight: 1.2,
+      },
+      fontFamily: {
+        "sans": ["iA Writer Quattro", ...defaultTheme.fontFamily.sans],
       },
       fontSize: {
         '5xl': '2.5rem',
