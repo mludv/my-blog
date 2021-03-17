@@ -1,10 +1,15 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 
+/*
+ * Colors from https://www.happyhues.co/palettes/8
+ */
+
 module.exports = {
   purge: ['./components/**/*.js', './pages/**/*.js'],
   theme: {
     extend: {
       colors: {
+        'secondary': '#f45d48',
         'accent-1': '#FAFAFA',
         'accent-2': '#EAEAEA',
         'accent-7': '#333',

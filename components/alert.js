@@ -11,20 +11,16 @@ export default function Alert({ preview }) {
     >
       <Container>
         <div className="py-2 text-sm text-center">
-          {preview ? (
-            <>
-              This page is a preview.{' '}
-              <a
-                href="/api/exit-preview"
-                className="underline hover:text-cyan duration-200 transition-colors"
-              >
-                Click here
-              </a>{' '}
-              to exit preview mode.
-            </>
-          ) : (
-            ""
-          )}
+          <>
+            This page is a preview.{' '}
+            <a
+              href="/api/exit-preview"
+              className="underline hover:text-cyan duration-200 transition-colors"
+            >
+              Click here
+            </a>{' '}
+            to exit preview mode.
+          </>
         </div>
       </Container>
     </div>

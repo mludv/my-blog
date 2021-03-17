@@ -29,13 +29,12 @@ export default function Post({ post, morePosts, preview }) {
                 <title>
                   {post.title} | { TITLE }
                 </title>
-                <meta property="og:image" content={post.ogImage.url} />
+                <meta property="og:image" content={post.ogImage?.url} />
               </Head>
               <PostHeader
                 title={post.title}
-                coverImage={post.coverImage}
+                coverImage={post.header}
                 date={post.date}
-                author={post.author}
               />
               <PostBody content={post.content} />
             </article>
