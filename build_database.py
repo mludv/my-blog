@@ -31,5 +31,7 @@ def weekly_notes():
         }
 
 
-db["weekly_notes"].drop()
+if "weekly_notes" in db.table_names():
+    db["weekly_notes"].drop()
+
 db["weekly_notes"].insert_all([note for note in weekly_notes()], pk="date")
