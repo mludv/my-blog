@@ -46,6 +46,5 @@ jobs:
           --project my-blog \
           --static static:static \
           --install datasette-template-sql \
-          --plugins-dir plugins \
           --template-dir templates \
           --public
