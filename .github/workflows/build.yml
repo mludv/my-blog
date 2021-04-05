@@ -19,7 +19,7 @@ jobs:
       name: Configure pip caching
       with:
         path: ~/.cache/pip
-        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+        key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
         restore-keys: |
           ${{ runner.os }}-pip-
     - uses: actions/cache@v2
@@ -39,6 +39,7 @@ jobs:
       env:
         VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
       run: |-
+        datasette install datasette-publish-vercel
         datasette publish vercel content.sqlite \
           --token $VERCEL_TOKEN \
           --branch main \
