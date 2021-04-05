@@ -1,0 +1,5 @@
+datasette==0.56
+sqlite-utils==3.6
+markdown2==2.4.0
+Pygments==2.8.1
+datasette-template-sql==1.0.2

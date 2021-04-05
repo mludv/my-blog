@@ -1,0 +1,21 @@
+{% extends "_base.html" %}
+{% block content %}
+  <section class="presentation">
+    <h1>Max Ludvigsson</h1>
+    <p>
+      I'm a data scientist and software engineer doing data products at HSBC in Hong Kong.
+    </p>
+  </section>
+  <section class="weekly-notes">
+    <h2>Weekly notes</h2>
+    <ul>
+    {% for row in sql("select * from weekly_notes order by date DESC") %}
+      <li>
+        <a href="/notes/{{ row["date"] }}">
+          {{ row["date"] }}
+        </a>
+      </li>
+    {% endfor %}
+    </ul>
+  </section>
+{% endblock %}

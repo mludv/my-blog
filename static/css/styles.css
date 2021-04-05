@@ -1,0 +1,108 @@
+:root {
+  --primary: rgba(0, 0, 0, 0.8);
+}
+body {
+  color: var(--primary);
+  font-family: iA Writer Quattro, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans,
+    sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
+    Noto Color Emoji;
+}
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.presentation > h1 {
+  font-size: 3em;
+}
+
+.presentation > p {
+}
+
+.weekly-notes > h2 {
+  font-size: 2em;
+}
+
+.weekly-notes > ul {
+  list-style: none;
+  padding: 0 0 0 20px;
+  font-size: 1.2em;
+}
+
+.weekly-notes > ul > li {
+  padding: 0.25em 0;
+}
+
+.weekly-notes > ul > li > a {
+  text-decoration: none;
+  color: var(--primary);
+}
+
+.weekly-notes > ul > li > a:hover {
+  text-decoration: underline;
+  color: var(--primary);
+}
+
+.home-link {
+  font-size: 1.5em;
+}
+
+.home-link > a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.home-link > a:hover {
+  text-decoration: underline;
+}
+
+.date {
+  margin-top: 30px;
+  float: right;
+}
+
+.typography h1 {
+  font-size: 3em;
+}
+
+@font-face {
+  font-family: "iA Writer Quattro";
+  font-style: normal;
+  font-weight: normal;
+  src: url("/static/fonts/iAWriterQuattroS-Regular.eot")
+      format("embedded-opentype"),
+    url("/static/fonts/iAWriterQuattroS-Regular.woff2") format("woff2"),
+    url("/static/fonts/iAWriterQuattroS-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "iA Writer Quattro";
+  font-style: italic;
+  font-weight: normal;
+  src: url("/static/fonts/iAWriterQuattroS-Italic.eot")
+      format("embedded-opentype"),
+    url("/static/fonts/iAWriterQuattroS-Italic.woff2") format("woff2"),
+    url("/static/fonts/iAWriterQuattroS-Italic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "iA Writer Quattro";
+  font-style: normal;
+  font-weight: bold;
+  src: url("/static/fonts/iAWriterQuattroS-Bold.eot")
+      format("embedded-opentype"),
+    url("/static/fonts/iAWriterQuattroS-Bold.woff2") format("woff2"),
+    url("/static/fonts/iAWriterQuattroS-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "iA Writer Quattro";
+  font-style: italic;
+  font-weight: bold;
+  src: url("/static/fonts/iAWriterQuattroS-BoldItalic.eot")
+      format("embedded-opentype"),
+    url("/static/fonts/iAWriterQuattroS-BoldItalic.woff2") format("woff2"),
+    url("/static/fonts/iAWriterQuattroS-BoldItalic.woff") format("woff");
+}
