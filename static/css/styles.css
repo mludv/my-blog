@@ -58,13 +58,13 @@ body {
   text-decoration: underline;
 }
 
-.date {
-  margin-top: 30px;
-  float: right;
+.post h1 {
+  font-size: 3em;
 }
 
-.typography h1 {
-  font-size: 3em;
+.post .date {
+  margin-top: 2rem;
+  margin-bottom: -2rem;
 }
 
 @font-face {

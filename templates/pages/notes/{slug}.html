@@ -5,11 +5,11 @@
     Max Ludvigsson
   </a>
 </div>
-<div class="typography">
+<div class="post">
   {% for row in sql("SELECT * from weekly_notes WHERE date = ?", [slug]) %}
-    <span class="date">
+    <div class="date">
       {{ row["date"] }}
-    </span>
+    </div>
     {{ row["html"] | safe }}
   {% endfor %}
   </div>
