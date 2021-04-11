@@ -1,6 +1,16 @@
 :root {
   --primary: rgba(0, 0, 0, 0.8);
+  --link: rgba(0, 0, 0, 0.6);
 }
+html {
+  font-size: 16px;
+}
+@media all and (min-width: 520px) {
+  html {
+    font-size: 20px;
+  }
+}
+
 body {
   color: var(--primary);
   font-family: iA Writer Quattro, ui-sans-serif, system-ui, -apple-system,
@@ -9,53 +19,74 @@ body {
     Noto Color Emoji;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin: 2rem 0 1rem 0;
+  line-height: 1.1;
+}
+
+h2 {
+  margin: 2rem 0 1rem 0;
+}
+
+p,
+li {
+  margin-bottom: 1em;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: 700;
+  border-radius: 8px;
+}
+
+a:hover {
+  text-decoration: none;
+  background-color: rgba(255, 0, 0, 0.2);
+}
+
+a:active {
+  color: rgba(0, 0, 0, 0.4);
+}
+
 .container {
   max-width: 700px;
   margin: 0 auto;
+  padding: 5px;
 }
 
 .presentation > h1 {
-  font-size: 3em;
+  font-size: 3rem;
 }
 
 .presentation > p {
 }
 
 .weekly-notes > h2 {
-  font-size: 2em;
+  font-size: 2rem;
 }
 
 .weekly-notes > ul {
   list-style: none;
-  padding: 0 0 0 20px;
+  width: 100%;
   font-size: 1.2em;
 }
 
-.weekly-notes > ul > li {
-  padding: 0.25em 0;
+.weekly-notes > ul * {
+  display: block;
 }
 
-.weekly-notes > ul > li > a {
-  text-decoration: none;
-  color: var(--primary);
-}
-
-.weekly-notes > ul > li > a:hover {
-  text-decoration: underline;
-  color: var(--primary);
+.weekly-notes a {
+  font-weight: normal;
 }
 
 .home-link {
   font-size: 1.5em;
-}
-
-.home-link > a {
-  color: var(--primary);
-  text-decoration: none;
-}
-
-.home-link > a:hover {
-  text-decoration: underline;
 }
 
 .post h1 {
