@@ -18,4 +18,17 @@
     {% endfor %}
     </ul>
   </section>
+  <section class="flashcards">
+    <h2>Latest flashcards studied</h2>
+    <p>
+    {% for row in sql("""
+select replace(hw, '@', '') as hw, date(lastreviewedtime,'unixepoch') as date from pleco_flash_scores_1
+inner join pleco_flash_cards on id = card
+order by lastreviewedtime DESC
+LIMIT 20
+""", database="pleco") %}
+<span>{{ row["hw"] }}</span>
+    {% endfor %}
+    </p>
+  </section>
 {% endblock %}

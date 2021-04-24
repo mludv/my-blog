@@ -85,6 +85,15 @@ a:active {
   font-weight: normal;
 }
 
+.flashcards > h2 {
+  font-size: 2rem;
+}
+
+.flashcards > p {
+  font-size: 1.2rem;
+  line-height: 2;
+}
+
 .home-link {
   font-size: 1.5em;
 }

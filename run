@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+latest_pleco=$(ls pleco/*.pqb | sort --reverse | head -n 1)
+rm -rf pleco.sqlite*
+cp "$latest_pleco" pleco.sqlite
+# datasette doesn't start a wal-enabled db without the wal file
+touch pleco.sqlite-wal
+datasette content.sqlite pleco.sqlite --static static:static --template-dir templates

@@ -11,6 +11,10 @@ jobs:
     steps:
     - name: Check out repo
       uses: actions/checkout@v2
+      with:
+        lfs: true
+    - name: Checkout lfs
+      run: git lfs checkout
     - name: Set up Python
       uses: actions/setup-python@v1
       with:
@@ -35,12 +39,19 @@ jobs:
     - name: Build database
       run: |-
         python build_database.py
+    - name: Copy pleco database
+      run: |-
+        latest_pleco=$(ls pleco/*.pqb | sort --reverse | head -n 1)
+        cp "$latest_pleco" pleco.sqlite
+        touch pleco.sqlite-wal
     - name: Deploy using Vercel
       env:
         VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
       run: |-
         datasette install datasette-publish-vercel
-        datasette publish vercel content.sqlite \
+        datasette publish vercel \
+          content.sqlite \
+          pleco.sqlite \
           --token $VERCEL_TOKEN \
           --branch main \
           --project my-blog \
