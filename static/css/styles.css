@@ -67,29 +67,23 @@ a:active {
 .presentation > p {
 }
 
-.weekly-notes > h2 {
-  font-size: 2rem;
-}
-
-.weekly-notes > ul {
-  list-style: none;
+nav {
   width: 100%;
   font-size: 1.2em;
-}
-
-.weekly-notes > ul * {
-  display: block;
-}
-
-.weekly-notes a {
   font-weight: normal;
+}
+
+nav > a {
+  display: block;
+  font-weight: normal;
+  margin: 1rem;
 }
 
 .flashcards > h2 {
   font-size: 2rem;
 }
 
-.flashcards > p {
+.flashcards > .chars {
   font-size: 1.2rem;
   line-height: 2;
 }

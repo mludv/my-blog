@@ -1,0 +1,33 @@
+{% extends "_base.html" %}
+{% block content %}
+  {% include "_homelink.html" %}
+  <section class="flashcards">
+    <h2>Latest flashcards studied</h2>
+    <p>
+      Fetched from <a href="https://pleco.com">Pleco</a> flashcards backup.
+    </p>
+    {% for row in sql("""
+      select date(lastreviewedtime,'unixepoch') as date, count(*) from pleco_flash_scores_1
+      inner join pleco_flash_cards on id = card
+      group by date(lastreviewedtime,'unixepoch')
+      order by lastreviewedtime DESC
+      LIMIT 10
+      """, database="pleco")
+    %}
+
+      <h3>{{ row["date"] }}</h3>
+      <p class="chars">
+      {% for char in sql("""
+        select replace(hw, '@', '') as hw from pleco_flash_scores_1
+        inner join pleco_flash_cards on id = card
+        where date(lastreviewedtime,'unixepoch') = '{}'
+        order by lastreviewedtime DESC
+        LIMIT 40""".format(row["date"]), database="pleco")
+      %}
+        <span>{{ char['hw'] }}</span>
+      {% endfor %}
+      </p>
+      
+    {% endfor %}
+  </section>
+{% endblock %}
