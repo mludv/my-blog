@@ -1,4 +1,4 @@
-datasette==0.56
+datasette==0.56.1
 sqlite-utils==3.6
 markdown2==2.4.0
 Pygments==2.8.1
